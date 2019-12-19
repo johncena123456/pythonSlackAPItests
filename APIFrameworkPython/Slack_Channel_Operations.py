@@ -10,7 +10,6 @@ class Slack_Channel_Operations(BaseApiOperations):
 
     def get_channel_list(self):
         response = self.get_call(self.CHANNEL_LIST, {})
-        assert response['ok'] is True
         return response
 
     def create_channel(self, name):
