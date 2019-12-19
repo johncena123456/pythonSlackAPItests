@@ -8,7 +8,7 @@ class Test_Slack_Methods:
     NEW_CHANNEL_NAME = ''.join(random.choice('ABCDSFGEHIJK123456') for i in range(5))
     RENAMED_CHANNEL_NAME = ''.join(random.choice('ABCDSFGEHIJK123456') for i in range(5))
 
-    def test_slack_methods(self):
+    def test_slack_get_list(self):
         self._verify_response_ok(self.slack.get_channel_list())
 
     def test_slack_create(self):
@@ -26,4 +26,4 @@ class Test_Slack_Methods:
         assert self.slack.verify_is_channel_archived(self.RENAMED_CHANNEL_NAME) is False, "Failed to Unarchive Channel"
 
     def _verify_response_ok(self, response):
-        assert response['ok'] is True, "Request was successfully processed"
+        assert response['ok'] is True, "Request failed due to %s" % response['error'] 
