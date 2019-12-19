@@ -3,7 +3,7 @@ import requests
 
 class BaseApiOperations:
     BASE_URL = "https://slack.com/api/{}"
-    TOKEN = "xoxp-878902350102-878554220535-866443708657-6e08f813ff3160991c48e1afba23d48b"
+    TOKEN = "REPLACE_TOKEN_HERE" #replace token
     JSON_HEADERS = {'Content-type': 'application/json'}
     URLENCODED_HEADERS = {'Content-type': 'application/x-www-form-urlencoded'}
 
